@@ -1,3 +1,8 @@
+# Personal keymapping for BananaSplit60 written in C.
+
+The actual keymap file is in ./keymaps/jagermap/
+
+
 # BananaSplit60
 
 A 60% PCB featuring a split spacebar.
