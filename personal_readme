@@ -1,0 +1,85 @@
+
+# This readme is executable as a method of flashing the keyboard but the better
+#+way to do this is to use the qmkcompile script.
+# I keep a symlink to this in ~/bin/ so that I can just run it from the keyboard
+#+directly by having it SEND_STRING("qmkcompile");
+
+# First, cd into the qmk_firmware root directory.
+# After editing the layout run this command:
+
+make thevankeyboards/bananasplit:jagermap && \
+\
+# You will need to run a command with sudo so the terminal remembers you have
+#+super-user perms first.
+# Run this command to flash the keyboard, you should have function enter bound
+#+to put the keyboard in flashing mode.
+# Press the key combination to enter flashing mode immediately after running
+#+this command.
+\
+sleep 5 && \
+echo start && \
+sudo dfu-programmer atmega32u4 erase --force && \
+echo erase && \
+sudo dfu-programmer atmega32u4 flash ./thevankeyboards_bananasplit_jagermap.hex && \
+echo flashe && \
+sudo dfu-programmer atmega32u4 launch && \
+echo finished, launching
+
+# The keyboard will reboot itself after this process.
+
+# There is a custom layout in bananasplit.h for this specific layout,
+#+it will need to be ported to any new versions of the firmware you use.
+# Make sure to keep the layout file which is in the keymaps directory.
+
+
+
+# /home/jager/src/qmk_firmware/keyboards/thevankeyboards/bananasplit/
+# ├── README.md
+# ├── atmega32u4				THIS IS THE MODEL OF CHIP WE NEED TO TARGET.
+# ├── bananasplit.c
+# ├── bananasplit.h			YOUR CUSTOM LAYOUT IS IN HERE, DONT' LOSE IT.
+# ├── config.h
+# ├── info.json
+# ├── keymaps
+# │   ├── 0010
+# │   │   ├── config.h
+# │   │   ├── keymap.c
+# │   │   └── rules.mk
+# │   ├── coloneljesus
+# │   │   ├── config.h
+# │   │   ├── keymap.c
+# │   │   ├── readme.md
+# │   │   └── rules.mk
+# │   ├── default
+# │   │   ├── config.h
+# │   │   ├── keymap.c
+# │   │   ├── readme.md
+# │   │   └── rules.mk
+# │   ├── hhkbanana
+# │   │   └── keymap.c
+# │   ├── jagermap
+# │   │   └── keymap.c		YOUR KEYMAP FILE IS HERE.
+# │   ├── jockyxu1122_ansi
+# │   │   ├── keymap.c
+# │   │   └── readme.md
+# │   ├── jockyxu1122_iso
+# │   │   ├── keymap.c
+# │   │   └── readme.md
+# │   ├── kamon
+# │   │   ├── config.h
+# │   │   ├── keymap.c
+# │   │   ├── readme.md
+# │   │   └── rules.mk
+# │   ├── nic
+# │   │   └── keymap.c
+# │   ├── rask
+# │   │   ├── README.md
+# │   │   └── keymap.c
+# │   └── talljoe
+# │       ├── config.h
+# │       └── keymap.c
+# ├── personal_readme		YOU ARE READING THIS DOCUMENT.
+# └── rules.mk
+# 
+# 12 directories, 34 files
+

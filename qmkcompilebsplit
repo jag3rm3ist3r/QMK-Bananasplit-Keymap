@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Compile and flash QMK firmware.
+cd ~/src/qmk_firmware/ && \
+make thevankeyboards/bananasplit:jagermap && \
+sleep 1 && \
+sudo dfu-programmer atmega32u4 erase --force && \
+sudo dfu-programmer atmega32u4 flash ./thevankeyboards_bananasplit_jagermap.hex && \
+sudo dfu-programmer atmega32u4 launch
+
+exit 0
+
+
