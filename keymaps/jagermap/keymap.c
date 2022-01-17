@@ -880,11 +880,9 @@ void matrix_scan_user(void) {
 		}
 
 		// Lock the screen.
-		/*
 		SEQ_FOUR_KEYS(KC_L, KC_O, KC_C, KC_K) {
-			LGUI(LALT(KC_ESC));
+			LAG(KC_ESC));
 		}
-		*/
 
 		// Print help message for these commands.
 		SEQ_FOUR_KEYS(KC_H, KC_E, KC_L, KC_P) {
