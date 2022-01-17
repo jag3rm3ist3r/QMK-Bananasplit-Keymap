@@ -879,11 +879,19 @@ void matrix_scan_user(void) {
 			SEND_STRING("LaTeX");
 		}
 
+		// Lock the screen.
+		/*
+		SEQ_FOUR_KEYS(KC_L, KC_O, KC_C, KC_K) {
+			LGUI(LALT(KC_ESC));
+		}
+		*/
+
 		// Print help message for these commands.
 		SEQ_FOUR_KEYS(KC_H, KC_E, KC_L, KC_P) {
 			SEND_STRING("root (owner), 2 (email), comp (compile), flash, ");
 			SEND_STRING("main (c main function), reg (settings), vim, novim, ");
-			SEND_STRING("win, nowin, calc (calculator), sysrq (SysRq), ");
+			SEND_STRING("win, nowin, calc (calculator), html (html doc husk), ");
+			SEND_STRING("sysrq (SysRq), latex (print LaTeX, ");
 			SEND_STRING("print (print screen), pause (pause/break), ");
 			SEND_STRING("ins (insert)");
 		}
