@@ -13,13 +13,12 @@ bool windows_key_disabled = false;
 
 // Run compile script without resetting keyboard.
 void compile(void) {
-	SEND_STRING("qmkcompilebsplit");
+	SEND_STRING("~/bin/qmkcompilebsplit");
 	tap_code16(KC_ENT);
 }
 // Run compile script and reset keyboard ready to be flashed.
 void compileflash(void) {
-	SEND_STRING("qmkcompilebsplit");
-	tap_code16(KC_ENT);
+	compile();
 	reset_keyboard();
 }
 
