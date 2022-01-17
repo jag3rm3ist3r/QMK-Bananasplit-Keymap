@@ -874,6 +874,11 @@ void matrix_scan_user(void) {
 		}
 		*/
 
+		// Print LaTeX when latex is typed.
+		SEQ_FIVE_KEYS(KC_L, KC_A, KC_T, KC_E, KC_X) {
+			SEND_STRING("LaTeX");
+		}
+
 		// Print help message for these commands.
 		SEQ_FOUR_KEYS(KC_H, KC_E, KC_L, KC_P) {
 			SEND_STRING("root (owner), 2 (email), comp (compile), flash, ");
