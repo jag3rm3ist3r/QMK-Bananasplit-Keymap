@@ -1,4 +1,4 @@
-# Personal keymapping for BananaSplit60 written in C.
+# Personal keymapping for BananaSplit60 written in C
 
 The actual keymap file is in [./keymaps/jagermap/](https://github.com/jag3rm3ist3r/QMK-Bananasplit-Keymap/blob/main/keymaps/jagermap/keymap.c)
 

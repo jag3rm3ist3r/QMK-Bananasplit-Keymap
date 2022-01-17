@@ -880,7 +880,7 @@ void matrix_scan_user(void) {
 
 		// Lock the screen.
 		SEQ_FOUR_KEYS(KC_L, KC_O, KC_C, KC_K) {
-			LAG(KC_ESC));
+			tap_code16(LAG(KC_ESC));
 		}
 
 		// Print help message for these commands.
