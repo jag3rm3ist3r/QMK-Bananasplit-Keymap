@@ -652,7 +652,12 @@ void dance_rcom_reset(qk_tap_dance_state_t *state, void *user_data) {
 	}
 }
 
-
+/*
+ * It may be worth making a function to combine all of these functions into one
+ *+that takes an argument to define which key to use since they have such a
+ *+similar structure.
+ * This will not work for the c style comment code because it works differently.
+ */
 qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_FLAB] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_flab_finished, dance_flab_reset),
     [TD_FRAB] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_frab_finished, dance_frab_reset),
@@ -953,7 +958,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LCA(KC_DEL), KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_TRNS, KC_TRNS, \
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP, KC_UP, KC_PGDN, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, \
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_TRNS, KC_LEAD, \
-    KC_TRNS, KC_TRNS, S(KC_X), S(KC_C), S(KC_V), KC_TRNS, KC_END, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+    KC_TRNS, KC_TRNS, S(KC_X), S(KC_C), S(KC_V), KC_TRNS, KC_END, KC_MUTE, KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, \
     KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_UNDS,          KC_TRNS, KC_TRNS, KC_NO, KC_TRNS, KC_PSCR  \
   ),
 
